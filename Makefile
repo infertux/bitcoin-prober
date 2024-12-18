@@ -12,6 +12,11 @@ lint:
 
 .PHONY: test
 test: $(BINARY)
-	./$(BINARY) --address 84.234.96.88
-	./$(BINARY) --address seed.bchd.cash:8333
+	./$(BINARY) --address 141.105.69.133
+	./$(BINARY) --address bch.imaginary.cash:8333
 	./$(BINARY) --address seed.bitnodes.io --network BTC
+
+.PHONY: update-dependencies
+update-dependencies:
+	go get -u
+	go mod tidy
